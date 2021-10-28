@@ -11,13 +11,13 @@ public class Main {
     static int result;
 
     public static void main (String[] args) {
-        System.out.println("Введите выражение [2+2] или два римских числа от I до X:[V+V] + Enter ");
-//      Считываем строку userInput которую ввёл пользователь
+        System.out.println("Введите выражение:");
+
         String userInput = scanner.nextLine();
-//      Создаём пустой символьный массив длиной 10 символов:  under_char
+
         char[] under_char = new char[10];
-//      Заполняем символьный массив символами строки которую ввел пользователь и по ходу ловим знак операции
-        for (int i = 0; i < userInput.length(); i++) {
+
+       for (int i = 0; i < userInput.length(); i++) {
             under_char[i] = userInput.charAt(i);
             if (under_char[i] == '+') {
                 operation = '+';
@@ -43,14 +43,14 @@ public class Main {
             result = 0;
         } else {
             result = calculated(number1, number2, operation);
-            System.out.println("---Результат для римских цифр----");
+            System.out.println("результат в римских цифрах:");
             String resultRoman = convertNumToRoman(result);
             System.out.println(stable00 + " " + operation + " " + string03 + " = " + resultRoman);
         }
         number1 = Integer.parseInt(stable00);
         number2 = Integer.parseInt(string03);
         result = calculated(number1, number2, operation);
-        System.out.println("--Результат для арабских цифр----");
+        System.out.println("результат в арабских цифрах:");
         System.out.println(number1 + " " + operation + " " + number2 + " = " + result);
     }
 
